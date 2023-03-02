@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import BackgroundImage from './BackgroundImage'
+import BackgroundImage from '../../components/welcome/WelcomCard'
 
 const Onboard = () => {
   return (
