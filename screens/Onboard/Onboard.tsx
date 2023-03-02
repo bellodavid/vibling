@@ -5,7 +5,7 @@ import BackgroundImage from './BackgroundImage'
 const Onboard = () => {
   return (
     <View>
-    <BackgroundImage/>
+    <Text>Everywhere stew</Text>
     </View>
   )
 }
