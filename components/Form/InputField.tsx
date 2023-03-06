@@ -1,47 +1,37 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
+import { Input } from '@rneui/themed';
+import { pallets } from '../../constant';
 
 interface InputFieldProps {
-  fullName: string;
-  email: string;
+  label: string;
   phone : string;
   placeholder: string;
+  icon: string;
+  handler: string;
+  setHandler: (text: string) => void;
 }
 
-const InputField = ({fullName, email, phone, placeholder}: InputFieldProps) => {
-  const [name, setName] = useState('');
-
+const InputField = ({label, handler, setHandler, phone, icon, placeholder}: InputFieldProps) => {
+  
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>{fullName}</Text>
-      <TextInput 
-        style={styles.input}
-        placeholder={placeholder}
-        value={name}
-        onChangeText={setName}
+    <View>
+      {/* <Text style={styles.label}>Full Name</Text> */}
+      <Input
+      inputStyle={{color: 'white', paddingLeft: 10}}
+      inputContainerStyle={{borderWidth: 0, borderBottomWidth:0, paddingLeft:10, 
+      padding:5, backgroundColor: pallets.input, borderColor: 'white', borderRadius: 10}}
+      containerStyle={{padding: 2, margin: 0}}
+      placeholder= {placeholder}
+      leftIcon={{ type: 'antdesign', name: `${icon}`, color: pallets.darkGrey}}
+      value={handler}
+      onChangeText={setHandler}  
+      label={label}
+      labelStyle={{color: pallets.grey, paddingBottom: 10}}
       />
+      
     </View>
   )
 }
 
 export default InputField;
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 30,
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    borderColor: 'white',
-    color: 'white',
-  },
-  label: {
-    color: 'white',
-    fontWeight:"bold",
-    fontSize: 15,
-    marginLeft: 10
-  }
-});
