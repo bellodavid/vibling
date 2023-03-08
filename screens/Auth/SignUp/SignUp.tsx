@@ -1,24 +1,36 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, TouchableOpacityBase } from 'react-native'
 import React, { useState } from 'react'
 import { pallets } from '../../../constant'
 import InputField from '../../../components/Form/InputField'
 import Information from '../../../components/Form/Information'
 import Button from '../../../components/Form/Button'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Icon } from '@rneui/base'
+import { Icon } from '@rneui/themed'
 import LeftArrow from '../../../assets/icons/LeftArrow'
+import { useNavigation } from '@react-navigation/native'
 
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  const navigation = useNavigation();
   
 
 
   return (
     <ScrollView style={styles.container}>
-  
+    <TouchableOpacity>
+     
+    <Icon 
+      type="antdesign" 
+      name="left" size={30} 
+      color="white"
+      containerStyle={{alignItems:"baseline", marginTop: 30, marginLeft: 10}}
+      onPress={navigation.goBack}/>
+    
+      </TouchableOpacity>
     <View style={{marginTop: 30, marginLeft: 10,
     marginRight: 10}}>
     <Information/>

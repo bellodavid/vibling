@@ -5,6 +5,7 @@ import Onboard from '../screens/Onboard/Onboard';
 import AuthNavigator from './Auth/AuthNavigator';
 
 export type RootStackParamList = {
+    auth: undefined;
     onboard: undefined;
     MyModal: { userId: string; name: string}
    
@@ -18,7 +19,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
     <RootStack.Group screenOptions={{
        headerShown: false
     }}>
-    <RootStack.Screen name="onboard" component={AuthNavigator} />
+    <RootStack.Screen name="auth" component={AuthNavigator} />
     
     </RootStack.Group>
    </RootStack.Navigator>
