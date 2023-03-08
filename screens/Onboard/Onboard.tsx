@@ -17,7 +17,7 @@ const Onboard = () => {
 
   const handleNext = () => {  
     if(currentSlide === 3){
-      navigation.navigate<slideProps>("SignUp")
+      navigation.navigate("SignUp")
     }else {
       setCurrentSlide(currentSlide < 3 ? currentSlide + 1 : currentSlide);
     }

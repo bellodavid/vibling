@@ -3,18 +3,22 @@ import React from 'react'
 import { pallets } from '../../constant';
 import { Icon } from '@rneui/themed';
 
-const Information = () => {
+interface infoProps {
+  step: string;
+  title: string;
+  description: string;
+}
+const Information = ({title, step, description}: infoProps) => {
   return (
     <View>
      
-      <Text style={styles.text}>Sign Up</Text>
-      <Text style={styles.description}>Welcome to VibingLIVE, which will make accompany your 
-        mood for mix. Let's create account now
+      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.description}>{description}
       </Text>
       <View style={{}}>
         <Text style={{alignSelf: "flex-end",
       color: "white", marginRight: 20,
-      marginBottom: 20, marginTop: 20}}>Step 1 of 2</Text>
+      marginBottom: 20, marginTop: 20}}>{step}</Text>
       </View>
     </View>
   )

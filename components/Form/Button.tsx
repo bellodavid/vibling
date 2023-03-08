@@ -1,15 +1,20 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import { pallets } from '../../constant'
+import { useNavigation } from '@react-navigation/native';
 
 interface buttonProps {
 action: string;
+CreateAccount: undefined;
+onPress: () => void;
 }
 
-const Button = ({action} :buttonProps) => {
+const Button = ({action, onPress} :buttonProps) => {
+
+  const navigation = useNavigation();
   return (
     <View style={{marginLeft: 10, marginRight: 10}}>
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity onPress={onPress} style={styles.container}>
         <Text style={styles.text}>{action}</Text>
       </TouchableOpacity>
       <>

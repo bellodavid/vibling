@@ -10,16 +10,13 @@ import LeftArrow from '../../../assets/icons/LeftArrow'
 import { useNavigation } from '@react-navigation/native'
 
 
-const SignUp = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+const CreateAccount = () => {
+  const [password, setPassword] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
   const navigation = useNavigation();
-
   const handleNext = () => {
-    navigation.navigate("CreateAccount")
+    navigation.navigate('CreateAccount')
   }
-  
   
 
 
@@ -38,42 +35,39 @@ const SignUp = () => {
     <View style={{marginTop: 30, marginLeft: 10,
     marginRight: 10}}>
     <Information title ="Sign Up" description = "Welcome to VibingLIVE, which will make accompany your 
-        mood for mix. Let's create account now" step ="Step 1 of 2"/>
+        mood for mix. Let's create account now" step ="Step 2 of 2"/>
+
     
       <InputField 
-      placeholder="Enter your full name"
-      label ="Full Name"
-      icon="user"
-      handler={name}
-      setHandler={setName}
+      placeholder="Enter password"
+      label ="Password"
+      icon="lock"
+      iconRight="eye"
+      handler={password}
+      setHandler={setPassword}
+      instruction= "Minimum of 6 letters including numbers"
       />
+      
  
       <InputField
-      label="Email Address"
-      placeholder="Enter your email address"
-      icon="mail"
-      handler={email}
-      setHandler={setEmail}
+      label="Confirm Password"
+      placeholder="Confirm your password"
+      icon="lock"
+      iconRight="eye"
+      handler={confirmPass}
+      setHandler={setConfirmPass}
+      instruction= "Minimum of 6 letters including numbers"
       />
       
-      <InputField
-      label="Phone Number"
-      placeholder="81356377273"
-      icon="phone"
-     
-      handler={phone}
-      setHandler={setPhone}
-      />
-     <TouchableOpacity>
-      <Button onPress= {handleNext} action="Next Step"/>
-      </TouchableOpacity>
-      
+     <View >
+      <Button onPress ={handleNext} action="Create Account"/>
+      </View>
       </View>
     </ScrollView>
   )
 }
 
-export default SignUp
+export default CreateAccount;
 
 const styles = StyleSheet.create({
 container: {
