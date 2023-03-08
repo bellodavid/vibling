@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { pallets } from '../../../constant'
 import InputField from '../../../components/Form/InputField'
 import Information from '../../../components/Form/Information'
 import Button from '../../../components/Form/Button'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Icon } from '@rneui/base'
+import LeftArrow from '../../../assets/icons/LeftArrow'
 
 
 const SignUp = () => {
@@ -15,11 +17,12 @@ const SignUp = () => {
 
 
   return (
-    <View style={styles.container}>
-   
+    <ScrollView style={styles.container}>
+  
     <View style={{marginTop: 30, marginLeft: 10,
     marginRight: 10}}>
     <Information/>
+    
       <InputField 
       placeholder="Enter your full name"
       label ="Full Name"
@@ -27,7 +30,7 @@ const SignUp = () => {
       handler={name}
       setHandler={setName}
       />
-
+ 
       <InputField
       label="Email Address"
       placeholder="Enter your email address"
@@ -44,12 +47,10 @@ const SignUp = () => {
       setHandler={setPhone}
       />
 
-      <Button/>
-      <Text>You already have account? 
-        
-      Sign in</Text>
+      <Button action="Next Step"/>
+      
       </View>
-    </View>
+    </ScrollView>
   )
 }
 

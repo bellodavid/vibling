@@ -21,7 +21,7 @@ const InputField = ({label, handler, setHandler, phone, icon, placeholder}: Inpu
       inputStyle={{color: 'white', paddingLeft: 10}}
       inputContainerStyle={{borderWidth: 0, borderBottomWidth:0, paddingLeft:10, 
       padding:5, backgroundColor: pallets.input, borderColor: 'white', borderRadius: 10}}
-      containerStyle={{padding: 2, margin: 0}}
+      containerStyle={{ margin: 0 }}
       placeholder= {placeholder}
       leftIcon={{ type: 'antdesign', name: `${icon}`, color: pallets.darkGrey}}
       value={handler}

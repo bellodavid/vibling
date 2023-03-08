@@ -2,17 +2,40 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import BackgroundImage from '../../components/welcome/WelcomCard'
 import WelcomCard from '../../components/welcome/WelcomCard'
+import { useNavigation } from '@react-navigation/native'
+import { pallets } from '../../constant'
+import { Icon } from '@rneui/themed'
 
+
+interface slideProps{
+  SignUp: { name: undefined};
+}
 const Onboard = () => {
+  const navigation = useNavigation();
+
   const [currentSlide, setCurrentSlide] = useState(1);
 
   const handleNext = () => {  
-    setCurrentSlide(currentSlide < 3 ? currentSlide + 1 : currentSlide);
+    if(currentSlide === 3){
+      navigation.navigate<slideProps>("SignUp")
+    }else {
+      setCurrentSlide(currentSlide < 3 ? currentSlide + 1 : currentSlide);
+    }
 
   }
 
   const handlePrev = () => {
-  setCurrentSlide(currentSlide > 1 ? currentSlide - 1 : currentSlide);
+    if(currentSlide === 1){
+      navigation.navigate("SignUp")
+    }else {
+      setCurrentSlide(currentSlide > 1 ? currentSlide - 1 : currentSlide);
+    }
+
+  
+  }
+
+  const handleSlide =() => {
+   
   }
   return (
     <View >
@@ -34,6 +57,8 @@ const Onboard = () => {
           <Text style={{fontSize: 20, color: currentSlide === 3? "#FF3D00" : "white"}}>
             {currentSlide === 3? "Get started"  : "Next"}</Text>
         </TouchableOpacity>
+
+        
         
     </View>
     </View>
