@@ -9,13 +9,14 @@ import { Icon } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
 
 
-const CreateAccount = () => {
+const Verify = () => {
   const [verify, setVerify] = useState("");
   const navigation = useNavigation();
   const handleNext = () => {
-    navigation.navigate('CreateAccount')
+    navigation.navigate('Login')
   }
   
+ 
 
 
   return (
@@ -32,29 +33,18 @@ const CreateAccount = () => {
       </TouchableOpacity>
     <View style={{marginTop: 30, marginLeft: 10,
     marginRight: 10}}>
-    <Information title ="Sign Up" description = "Hi David! account verification code has been sent to your email address lad****@gmail.com" step ="Step 1 of 2"/>
-
-    
-      <InputField 
-      placeholder="Enter password"
-      label ="Password"
-      icon="lock"
-      iconRight="eye"
-      handler={verify}
-      setHandler={setVerify}
-      instruction= "Minimum of 6 letters including numbers"
-      />
+    <Information title ="Verify your email " description = "Hi David! account verification code has been sent to your email address lad****@gmail.com" step =""/>
       
       
-     <View >
-      <Button onPress ={handleNext} action="Create Account"/>
-      </View>
+      <TouchableOpacity>
+      <Button onPress={handleNext} description="Didn't receive email?" call="Click to resend" action="Open Email"/>
+      </TouchableOpacity>
       </View>
     </ScrollView>
   )
 }
 
-export default CreateAccount;
+export default Verify;
 
 const styles = StyleSheet.create({
 container: {

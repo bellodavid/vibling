@@ -20,6 +20,9 @@ const SignUp = () => {
     navigation.navigate("CreateAccount")
   }
   
+  const signIn = () => {
+    navigation.navigate('Login')
+  }
   
 
 
@@ -65,7 +68,7 @@ const SignUp = () => {
       setHandler={setPhone}
       />
      <TouchableOpacity>
-      <Button onPress= {handleNext} action="Next Step"/>
+      <Button pressIn={signIn} call="Sign in" description='You have account?' onPress= {handleNext} action="Next Step"/>
       </TouchableOpacity>
       
       </View>

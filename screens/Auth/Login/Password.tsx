@@ -6,21 +6,21 @@ import Information from '../../../components/Form/Information'
 import Button from '../../../components/Form/Button'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Icon } from '@rneui/themed'
-import LeftArrow from '../../../assets/icons/LeftArrow'
 import { useNavigation } from '@react-navigation/native'
 
 
-const CreateAccount = () => {
-  const [password, setPassword] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
+const Password = () => {
+  const [email, setEmail] = useState("");
   const navigation = useNavigation();
-  const handleNext = () => {
+  
+  const handleSubmit = () => {
     navigation.navigate('Verify')
   }
-  
-  const signIn = () => {
+
+  const handleBackToLogin = () => {
     navigation.navigate('Login')
   }
+  
 
 
   return (
@@ -37,40 +37,28 @@ const CreateAccount = () => {
       </TouchableOpacity>
     <View style={{marginTop: 30, marginLeft: 10,
     marginRight: 10}}>
-    <Information title ="Sign Up" description = "Welcome to VibingLIVE, which will make accompany your 
-        mood for mix. Let's create account now" step ="Step 2 of 2"/>
+    <Information title ="Password" description = "Enter your registered email address below
+    to receive password reset link"/>
 
     
       <InputField 
-      placeholder="Enter password"
-      label ="Password"
-      icon="lock"
-      iconRight="eye"
-      handler={password}
-      setHandler={setPassword}
-      instruction= "Minimum of 6 letters including numbers"
-      />
-      
- 
-      <InputField
-      label="Confirm Password"
-      placeholder="Confirm your password"
-      icon="lock"
-      iconRight="eye"
-      handler={confirmPass}
-      setHandler={setConfirmPass}
-      instruction= "Minimum of 6 letters including numbers"
+      placeholder="Enter your email address"
+      label ="Email Address"
+      icon="mail"
+      handler={email}
+      setHandler={setEmail}
       />
       
      <View >
-      <Button pressIn={signIn} call ="Sign in" description='You have account?' onPress ={handleNext} action="Create Account"/>
+      <Button onPress={handleSubmit} action="Submit"/>
+      <Text onPress={handleBackToLogin} style={styles.login}>Back to login</Text>
       </View>
       </View>
     </ScrollView>
   )
 }
 
-export default CreateAccount;
+export default Password;
 
 const styles = StyleSheet.create({
 container: {
@@ -78,5 +66,12 @@ container: {
   height: "100%",
   width: "100%",
   backgroundColor: pallets.backgroundDarker
+},
+login: {
+    position: "absolute",
+    color: pallets.white,
+    marginTop: 90,
+    alignSelf: "center",
+
 }
 })

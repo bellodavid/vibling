@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Onboard from '../../screens/Onboard/Onboard';
 import SignUp from '../../screens/Auth/SignUp/SignUp';
 import CreateAccount from '../../screens/Auth/SignUp/CreateAccount';
+import Verify from '../../screens/Auth/Login/Verify';
+import Login from '../../screens/Auth/Login/Login';
+import Password from '../../screens/Auth/Login/Password';
 
 
 export type RootStackParamList = {
@@ -11,6 +14,9 @@ export type RootStackParamList = {
     MyModal: { userId: string; name: string}
     SignUp: { name: string};
     CreateAccount: { name: string};
+    Verify: { name: string};
+    Login: { name: string};
+    Password: { name: string};
    
   }
 
@@ -25,7 +31,12 @@ const Auth = createNativeStackNavigator<RootStackParamList>();
     <Auth.Screen name="onboard"  component={Onboard} />
     <Auth.Screen name="SignUp" component={SignUp} />
     <Auth.Screen name="CreateAccount" component={CreateAccount} />
+    <Auth.Screen name="Verify" component={Verify} />  
+    <Auth.Screen name="Login" component={Login} />
+    <Auth.Screen name="Password" component={Password} />
+
     </Auth.Group>
+   
     
    </Auth.Navigator>
   )

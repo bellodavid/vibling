@@ -6,10 +6,13 @@ import { useNavigation } from '@react-navigation/native';
 interface buttonProps {
 action: string;
 CreateAccount: undefined;
+call: string;
+description: string;
+pressIn: () => void;
 onPress: () => void;
 }
 
-const Button = ({action, onPress} :buttonProps) => {
+const Button = ({action, onPress, call, description, pressIn} :buttonProps) => {
 
   const navigation = useNavigation();
   return (
@@ -19,8 +22,8 @@ const Button = ({action, onPress} :buttonProps) => {
       </TouchableOpacity>
       <>
       <Text style={{color: pallets.white, 
-      alignSelf: "center", paddingTop: 15}}>You already have account? 
-        <Text style={{color: pallets.primary}}> Sign in </Text>
+      alignSelf: "center", paddingTop: 15}}>{description} 
+        <Text onPress={pressIn} style={{color: pallets.primary}}> {call} </Text>
       </Text>
       </>
     </View>
