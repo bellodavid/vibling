@@ -13,7 +13,7 @@ const CardProp = ({ imgUrl, title }: detailProp) => {
         <Card containerStyle={{
             width:170,
             borderRadius: 10,
-            height: 90,
+            height: 75,
             backgroundColor: pallets.background,
             borderWidth: 0,
             padding: 0,
@@ -24,8 +24,8 @@ const CardProp = ({ imgUrl, title }: detailProp) => {
       <View style={styles.container}>
         <Image source={{uri: `${imgUrl}`}}
         containerStyle={{
-            width: 75,
-            height: 80
+            width: 80,
+            height: 75
         }}/>
         <Text style={{color: "white", alignSelf: "center", paddingLeft: 10}}>{title}</Text>
       </View>
@@ -34,7 +34,7 @@ const CardProp = ({ imgUrl, title }: detailProp) => {
 }
 const DetailCard = () => {
   return (
-    <ScrollView  horizontal={true}>
+    <ScrollView style={{marginTop: 20, padding: 0}} showsHorizontalScrollIndicator={false} horizontal={true}>
        <CardProp title="DJ Mixes"
        imgUrl='https://www.optoproductions.com/wp-content/uploads/2020/03/10-Tips-To-Craft-The-Best-DJ-Mix-451x300.jpg'/>
        <CardProp title = "Audiobook" imgUrl="https://nationaltoday.com/wp-content/uploads/2021/06/Audiobook-.jpg" />
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
 container:{
     display: "flex",
     flexDirection: "row",
+    margin: 0,
 },
 
 })

@@ -42,8 +42,6 @@ container: {
   padding: 5,
   paddingLeft: 10,
   paddingRight: 10,
-  
- 
   alignItems: "center"
 
 

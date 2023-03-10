@@ -12,12 +12,11 @@ const AdsBanner = () => {
         borderRadius: 20,
         marginTop: 20
       }}
-      source = {{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJuOeZkFNA4Ehz17o1ZjJnGRDmggvRp0D2fw&usqp=CAU'}}/>
+      source = {{uri: 'https://c0.wallpaperflare.com/preview/415/916/987/concert-light-crowd-yellow.jpg'}}/>
       <View style={styles.banner}>
         <Text style={{
           color: "white",
           fontWeight: "bold",
-        
         }}>Party Mix</Text>
       </View>
     </View>
