@@ -1,13 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import AlbumCard from './AlbumCard'
 
-const Album = () => {
+const Category = () => {
   return (
-    
     <View>
-      <Text>Album</Text>
+     <AlbumCard/>
     </View>
   )
 }
 
-export default Album
+export default Category

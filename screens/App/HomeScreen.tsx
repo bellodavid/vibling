@@ -3,6 +3,9 @@ import React from 'react'
 import { pallets } from '../../constant'
 import Header from '../../components/Header/Header'
 import AdsBanner from '../../components/Banner/AdsBanner'
+import NavBotton from '../../components/Home/NavBotton'
+import DetailCard from '../../components/Home/DetailCard'
+import Category from '../../components/Category/Category'
 
 const HomeScreen = () => {
   return (
@@ -10,6 +13,9 @@ const HomeScreen = () => {
       <View style={styles.innerContainer}>
       <Header/>
       <AdsBanner/>
+      <NavBotton/>
+      <DetailCard/>
+      <Category/>
       </View>
   </ScrollView>
   )
