@@ -1,24 +1,31 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Card, Image } from '@rneui/themed'
 import Logo from './Logo'
 
-const AlbumCard = () => {
+type AlbumCardProps = {
+  title: string;
+  description: string;
+  imgUrl: string;
+}
+
+const AlbumCard = ({title, description, imgUrl} : AlbumCardProps) => {
   return (
-   
-    <View style={{display:"flex", flexDirection: "column", marginTop: 20}}>
+   <TouchableOpacity>
+    <View style={{display:"flex", marginLeft: 0, marginHorizontal: 10, flexDirection: "column", justifyContent: "space-between", marginTop: 20}}>
       <Card containerStyle={styles.container}>
         <Image containerStyle={{
           width: 149,
           height: 140,
-        }} source={{uri: 'https://fakazahiphop.com/wp-content/uploads/2019/04/Dj-Skhu-Magnetic-Points-%E2%80%93-Africa-1200x1285.jpg'}}/>
+        }} source={{uri: `${imgUrl}`}}/>
       </Card>
       <Logo/>
      <View style={{marginTop: 5}}>
-      <Text style={{color: "white", fontWeight: "bold"}}>DJ kycc</Text>
-      <Text style={{color: "white"}}>Burna boy, Joeboy, Fireboy</Text>
+      <Text style={{color: "white", fontWeight: "bold"}}>{title}</Text>
+      <Text style={{color: "white"}}>{description}</Text>
       </View>
     </View>
+    </TouchableOpacity>
   )
 }
 

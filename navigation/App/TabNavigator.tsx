@@ -33,9 +33,11 @@ const TabNavigator = () => {
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         position: "absolute",
-        height: 60,
+        height: 70,
         borderTopWidth: 0,
-        paddingBottom: 10,
+        paddingBottom: 8,
+        paddingTop: 10,
+        
       },
       
       tabBarIcon: ({ focused, color, size }) => {

@@ -6,10 +6,12 @@ import AdsBanner from '../../components/Banner/AdsBanner'
 import NavBotton from '../../components/Home/NavBotton'
 import DetailCard from '../../components/Home/DetailCard'
 import Category from '../../components/Category/Category'
+import { LinearGradient } from 'expo-linear-gradient';
 
 let ScreenHeight = Dimensions.get("window").height;
 const HomeScreen = () => {
-  
+  <LinearGradient colors={['rgb(27,153,139)']}
+  style={styles.container}/>
   return (
     <ScrollView style={styles.container}>
       <View style={styles.innerContainer}>
@@ -17,7 +19,10 @@ const HomeScreen = () => {
       <AdsBanner/>
       <NavBotton/>
       <DetailCard/>
-      <Category/>
+      <Category title="DJ mix (Trending)"/>
+      <Category title="Afrosounds"/>
+      <Category title="Hip hop"/>
+      <View  style={{height: 80}}></View>
       </View>
   </ScrollView>
   )
@@ -28,7 +33,8 @@ export default HomeScreen
 const styles = StyleSheet.create({
   container:{
     backgroundColor: pallets.backgroundSecondary,
-    height: ScreenHeight
+    height: ScreenHeight,
+  
   },
   innerContainer: {
     marginTop: 40,

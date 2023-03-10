@@ -18,7 +18,8 @@ const CardProp = ({ imgUrl, title }: detailProp) => {
             borderWidth: 0,
             padding: 0,
             margin: 0,
-            marginHorizontal: 10
+            marginHorizontal: 10,
+            marginLeft: 0,
 
         }}>
       <View style={styles.container}>

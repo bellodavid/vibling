@@ -2,10 +2,10 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 
 const Logo = () => {
-    const myImage = require('../../assets/icons/logo.png')
+    const myImage = require('../../assets/icons/logofav.png')
   return (
-    <View>
-      <Image style={{width: 80, height: 80}}source={myImage}/>
+    <View style={{position: "absolute"}}>
+      <Image source={myImage}/>
     </View>
   )
 }
