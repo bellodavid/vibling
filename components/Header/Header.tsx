@@ -8,7 +8,12 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Welcome back Bistom!</Text>
-      <View style={styles.container}>
+      <View style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: 65, 
+      }}>
         <Icon type="antdesign" name="bells" size={25} color="white"/>
         <EvilIcons name="user" size={30} color="white"/>
       </View>
