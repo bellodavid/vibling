@@ -11,6 +11,9 @@ interface slideProps{
   SignUp: { name: undefined};
 }
 const Onboard = () => {
+  const image1 = require('../../assets/images/onboard/onboard1.png')
+  const image2 = require('../../assets/images/onboard/onboard2.png')
+  const image3 = require('../../assets/images/onboard/onboard3.png')
   const navigation = useNavigation();
 
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -39,11 +42,11 @@ const Onboard = () => {
   }
   return (
     <View >
-      {currentSlide === 1 && <WelcomCard value="1 of 3" title="Welcome to" spantitle="VibingLive"
+      {currentSlide === 1 && <WelcomCard imgUrl={image1}value="1 of 3" title="Welcome to" spantitle="VibingLive"
       description="We are the second to the most popular place to listen to music in the world"/>}
-      {currentSlide === 2 && <WelcomCard value="2 of 3" title="Enjoy your music" 
+      {currentSlide === 2 && <WelcomCard imgUrl={image2} value="2 of 3" title="Enjoy your music" 
       description="Manage your playlist of dope Dj mixs, Audio books and best of Gosple musics to your liking"/>}
-      {currentSlide === 3 && <WelcomCard value="3 of 3" title="Unlimited Downloads" 
+      {currentSlide === 3 && <WelcomCard imgUrl={image3} value="3 of 3" title="Unlimited Downloads" 
       description="Manage your playlist of dope Dj mixs, Audio books and best of Gosple musics to your liking"/>}
 
       <View style={styles.modal}>

@@ -1,20 +1,20 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
-
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
 
+const screenHeight = Dimensions.get("window").height/2;
 interface Props{
   value: string;
   description: string;
   title: string;
   spantitle: string;
-  
+  imgUrl: string;
 }
 
-const WelcomCard = ({value, title, description, spantitle}: Props): JSX.Element | null => {
-  const myImage = require('../../assets/images/onboard/onboard2.png')
+const WelcomCard = ({value, title, imgUrl, description, spantitle}: Props): JSX.Element | null => {
+ 
   return (
     <View>
-       <Image style={styles.image} source={myImage}/>
+       <Image style={styles.image} source={`${imgUrl}`}/>
       <View style={styles.modal}>
       <View style={styles.textContainer}>
       <Text style={styles.text}>{value}</Text>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
  image:{
     width: '100%',
-    height: '90%',
+    height: "85%",
     resizeMode: 'cover',
  },
  text: {
