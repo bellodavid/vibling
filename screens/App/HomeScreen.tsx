@@ -22,7 +22,9 @@ const HomeScreen = () => {
       <Category title="DJ mix (Trending)"/>
       <Category title="Afrosounds"/>
       <Category title="Hip hop"/>
-      <View  style={{height: 80}}></View>
+      <Category title="Hip hop"/>
+      <Category title="Afrosounds"/>
+      {/* <View  style={{height: 80}}></View> */}
       </View>
   </ScrollView>
   )

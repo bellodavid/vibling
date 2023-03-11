@@ -20,7 +20,7 @@ const NavBotton = () => {
       data= {DATA}
       contentContainerStyle={{display:"flex",
       width: "100%", justifyContent: "space-around"}}
-      renderItem = {({item}) => <TouchableOpacity onPress={handlePress}  style={[styles.container, {backgroundColor: active? pallets.primary : "transparent"}]}>
+      renderItem = {({item}) => <TouchableOpacity style={{marginHorizontal: 20}} onPress={handlePress}  style={[styles.container, {backgroundColor: active? pallets.primary : "transparent"}]}>
       <Text style={{color: "white",
      fontSize: 15, fontWeight: "bold"}}>{item.title}</Text>
   </TouchableOpacity>} 

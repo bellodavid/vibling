@@ -14,10 +14,7 @@ export const DATA = [{
     id: '4',
     title: 'Pop',
   },
-  {
-    id: '5',
-    title: 'Gospel',
-  },
+ 
   ]
 
  
