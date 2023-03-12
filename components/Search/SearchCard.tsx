@@ -7,7 +7,7 @@ import Logo from '../Category/Logo'
 
 const SearchCard = () => {
   return (
-    <View style={{marginLeft: 20, marginBottom: 20}}>
+    <View style={{marginLeft: 20, marginBottom: 20, marginTop: 20}}>
       <Card containerStyle={styles.cardStyle}>
         <Image style={{
           width: 170,

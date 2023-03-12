@@ -49,7 +49,7 @@ const TabNavigator = () => {
           return(
             <Icon  name="search" size={30} color={focused? pallets.primary: "gray"} />
           )
-        }else if (route.name==='Library'){
+        }else if (route.name==='My Library'){
           return(
             <Ionicons name="albums" size={30} color={focused? pallets.primary: "gray"} />
           )
@@ -64,7 +64,7 @@ const TabNavigator = () => {
       }} name="Search" component={SearchScreen} />
       <Tab.Screen options={{
         headerShown: false
-      }}name="Library" component={LibraryScreen} />
+      }}name="My Library" component={LibraryScreen} />
     </Tab.Navigator>
    
    

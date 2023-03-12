@@ -14,8 +14,8 @@ const Header = () => {
         justifyContent: "space-between",
         width: 65, 
       }}>
-        <Icon type="antdesign" name="bells" size={25} color="white"/>
-        <EvilIcons name="user" size={30} color="white"/>
+        <Icon style ={{marginTop: 1}} type="antdesign" name="bells" size={25} color="white"/>
+        <EvilIcons name="user" size={32} color="white"/>
       </View>
     </View>
   )

@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const HeaderSearch = () => {
   const [value, setValue] = useState('')
-  const [active, setActive] =useState(true)
+  const [active, setActive] =useState(false)
 
   const handleClick = () => {
     setActive(!active)

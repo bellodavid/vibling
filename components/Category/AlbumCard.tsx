@@ -2,27 +2,29 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Card, Image } from '@rneui/themed'
 import Logo from './Logo'
+import { Album } from '../../types'
 
 type AlbumCardProps = {
-  title: string;
-  description: string;
-  imgUrl: string;
+  playTitle: string;
+  player: string;
+  imageUri: string;
+  artistsHeadline: string;
 }
 
-const AlbumCard = ({title, description, imgUrl} : AlbumCardProps) => {
+const AlbumCard = (props : AlbumCardProps) => {
   return (
    <TouchableOpacity>
-    <View style={{display:"flex", marginLeft: 0, marginHorizontal: 10, flexDirection: "column", justifyContent: "space-between", marginTop: 20}}>
-      <Card containerStyle={styles.container}>
+    <View style={{display:"flex", marginLeft: 0, marginRight: 20, flexDirection: "column", justifyContent: "space-between", marginTop: 8}}>
+      <View style={styles.container}>
         <Image containerStyle={{
-          width: 149,
-          height: 140,
-        }} source={{uri: `${imgUrl}`}}/>
-      </Card>
+          width: 155,
+          height: 155,
+        }} source={{uri: props.album.imageUri}}/>
+      </View>
       <Logo/>
-     <View style={{marginTop: 5}}>
-      <Text style={{color: "white", fontWeight: "bold"}}>{title}</Text>
-      <Text style={{color: "white"}}>{description}</Text>
+     <View style={{marginTop: 20}}>
+      <Text style={{color: "white", fontWeight: "bold"}}>{props.album.player}</Text>
+      <Text style={{color: "white", fontSize: 12}}>{props.album.artistsHeadline}</Text>
       </View>
     </View>
     </TouchableOpacity>

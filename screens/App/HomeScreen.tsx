@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Dimensions, FlatList } from 'react-native'
 import React from 'react'
 import { pallets } from '../../constant'
 import Header from '../../components/Header/Header'
@@ -7,6 +7,7 @@ import NavBotton from '../../components/Home/NavBotton'
 import DetailCard from '../../components/Home/DetailCard'
 import Category from '../../components/Category/Category'
 import { LinearGradient } from 'expo-linear-gradient';
+import albumCategories from '../../data/albumCategories'
 
 let ScreenHeight = Dimensions.get("window").height;
 const HomeScreen = () => {
@@ -19,12 +20,13 @@ const HomeScreen = () => {
       <AdsBanner/>
       <NavBotton/>
       <DetailCard/>
-      <Category title="DJ mix (Trending)"/>
-      <Category title="Afrosounds"/>
-      <Category title="Hip hop"/>
-      <Category title="Hip hop"/>
-      <Category title="Afrosounds"/>
-      {/* <View  style={{height: 80}}></View> */}
+      <FlatList
+      data = {albumCategories}
+      renderItem={({item}) => <Category title={item.title} albums={item.albums}/>}
+      keyExtractor={item => item.id}
+      showsHorizontalScrollIndicator={false}
+   />
+      <View style={{ height: 70}}></View>
       </View>
   </ScrollView>
   )

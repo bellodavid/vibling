@@ -20,18 +20,18 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 
   return (
    <RootStack.Navigator >
-    <RootStack.Group screenOptions={{
+    {/* <RootStack.Group screenOptions={{
        headerShown: false
     }}>
     <RootStack.Screen name="auth" component={AuthNavigator} />
-    </RootStack.Group>
-    {/* <RootStack.Group screenOptions={{
+    </RootStack.Group> */}
+    <RootStack.Group screenOptions={{
       headerShown: false
     }}>
     <RootStack.Screen  options={{
       headerShown: false
     }}name="tab" component={TabNavigator} />
-    </RootStack.Group> */}
+    </RootStack.Group>
    </RootStack.Navigator>
   )
 }
